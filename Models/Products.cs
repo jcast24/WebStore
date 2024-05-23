@@ -1,4 +1,6 @@
-﻿namespace WebStoreAPI.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace WebStoreAPI.Models;
 
 public class Products
 {
@@ -8,4 +10,9 @@ public class Products
     public string Description { get; set; } = string.Empty;
     public decimal Price { get; set; }
     public bool IsAvailable { get; set; }
+    public int CategoryId { get; set; } 
+    
+    [JsonIgnore]
+    public virtual Category Category { get; set; }
+    
 }
